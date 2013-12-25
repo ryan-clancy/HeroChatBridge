@@ -1,0 +1,5 @@
+name: HeroChatBridgeBungee
+main: com.rylinaux.herochatbridge.HeroChatBridgeBungee
+version: 1.0
+author: rylinaux
+depends: ['BungeeYAML']
