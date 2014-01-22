@@ -1,0 +1,12 @@
+channels:
+  - Admin
+  - Architect
+  - Global
+  - Staff
+  - VIP
+
+keys:
+  Freebuild: F
+  Games: G
+  Hub: H
+  SkyBlock: S
