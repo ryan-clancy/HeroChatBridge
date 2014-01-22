@@ -19,6 +19,8 @@ public class HeroChatBridgeBukkit extends JavaPlugin {
 
     private List<String> channels = null;
 
+    private List<String> blackList = null;
+
     @Override
     public void onEnable() {
 
@@ -47,11 +49,16 @@ public class HeroChatBridgeBukkit extends JavaPlugin {
         this.getConfig().options().copyDefaults(true);
         serverKey = this.getConfig().getString("key");
         channels = this.getConfig().getStringList("channels");
+        blackList = this.getConfig().getStringList("blacklist");
         this.saveConfig();
     }
 
     public static Chat getChat() {
         return chat;
+    }
+
+    public boolean isBlacklisted(String channel) {
+        return blackList.contains(channel);
     }
 
     public boolean isValidChannel(String channel) {

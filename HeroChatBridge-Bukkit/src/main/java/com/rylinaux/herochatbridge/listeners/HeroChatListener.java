@@ -24,12 +24,14 @@ public class HeroChatListener implements Listener {
     @EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
     public void onChannelChat(ChannelChatEvent event) {
         // Make sure the chat is allowed and it isn't a PM
-        if (event.getResult() == Chatter.Result.ALLOWED) {
+        if ((event.getResult() == Chatter.Result.ALLOWED)) {
             if (!(event.getFormat().equalsIgnoreCase(Herochat.getChannelManager().getConversationFormat()))) {
                 String channel = event.getChannel().getName();
-                String player = event.getSender().getName();
-                String message = event.getMessage();
-                transmit(channel, player, message);
+                if (plugin.isValidChannel(channel)) {
+                    String player = event.getSender().getName();
+                    String message = event.getMessage();
+                    transmit(channel, player, message);
+                }
             }
         }
     }

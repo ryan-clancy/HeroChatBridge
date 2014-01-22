@@ -40,6 +40,10 @@ public class HeroChatPluginMessageListener implements PluginMessageListener {
             return;
         }
 
+        if (plugin.isBlacklisted(channelName)) {
+            return;
+        }
+
         String playerName = in.readUTF();
         String message = in.readUTF();
         String fromServer = in.readUTF();

@@ -6,3 +6,6 @@ channels:
   - Global
   - Staff
   - VIP
+
+blacklist:
+  - Example
