@@ -35,11 +35,6 @@ public class HeroChatPluginMessageListener implements PluginMessageListener {
         String playerName = in.readUTF();
         String message = in.readUTF();
         String fromServer = in.readUTF();
-        String toServer = in.readUTF();
-
-        if (fromServer.equalsIgnoreCase(toServer)) {
-            return;
-        }
 
         Channel channel = Herochat.getChannelManager().getChannel(channelName);
 

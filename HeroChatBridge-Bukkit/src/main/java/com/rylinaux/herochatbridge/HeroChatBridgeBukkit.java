@@ -3,6 +3,7 @@ package com.rylinaux.herochatbridge;
 import com.rylinaux.herochatbridge.listeners.HeroChatListener;
 import com.rylinaux.herochatbridge.listeners.HeroChatPluginMessageListener;
 
+import java.util.List;
 import java.util.logging.Level;
 
 import net.milkbowl.vault.chat.Chat;
@@ -13,6 +14,10 @@ import org.bukkit.plugin.java.JavaPlugin;
 public class HeroChatBridgeBukkit extends JavaPlugin {
 
     private static Chat chat = null;
+
+    private String serverKey = "";
+
+    private List<String> channels = null;
 
     @Override
     public void onEnable() {
@@ -33,8 +38,22 @@ public class HeroChatBridgeBukkit extends JavaPlugin {
         return (chat != null);
     }
 
+    private void initConfig() {
+        this.getConfig().options().copyDefaults(true);
+        serverKey = this.getConfig().getString("key");
+        channels = this.getConfig().getStringList("channels");
+    }
+
     public static Chat getChat() {
         return chat;
+    }
+
+    public boolean isValidChannel(String channel) {
+        return channels.contains(channel);
+    }
+
+    public String getServerKey() {
+        return serverKey;
     }
 
 }

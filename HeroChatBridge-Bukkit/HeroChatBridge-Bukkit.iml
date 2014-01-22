@@ -12,7 +12,7 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.bukkit:bukkit:1.6.4-R2.0" level="project" />
-    <orderEntry type="library" name="Maven: net.milkbowl.vault:Vault:1.2.26-SNAPSHOT" level="project" />
+    <orderEntry type="library" name="Maven: net.milkbowl.vault:Vault:1.2.30" level="project" />
     <orderEntry type="module-library">
       <library name="Maven: com.dthielke:Herochat:5.6.7">
         <CLASSES>
