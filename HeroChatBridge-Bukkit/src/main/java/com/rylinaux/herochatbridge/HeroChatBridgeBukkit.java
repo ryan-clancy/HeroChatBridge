@@ -21,14 +21,19 @@ public class HeroChatBridgeBukkit extends JavaPlugin {
 
     @Override
     public void onEnable() {
+
         if (!initChat()) {
             this.getServer().getLogger().log(Level.SEVERE, "Vault not installed, disabling.");
             this.getServer().getPluginManager().disablePlugin(this);
             return;
         }
+
+        initConfig();
+
         this.getServer().getPluginManager().registerEvents(new HeroChatListener(this), this);
         this.getServer().getMessenger().registerIncomingPluginChannel(this, "HeroChatBridge", new HeroChatPluginMessageListener(this));
         this.getServer().getMessenger().registerOutgoingPluginChannel(this, "HeroChatBridge");
+
     }
 
     private boolean initChat() {
@@ -42,6 +47,7 @@ public class HeroChatBridgeBukkit extends JavaPlugin {
         this.getConfig().options().copyDefaults(true);
         serverKey = this.getConfig().getString("key");
         channels = this.getConfig().getStringList("channels");
+        this.saveConfig();
     }
 
     public static Chat getChat() {

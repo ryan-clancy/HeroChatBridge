@@ -11,21 +11,12 @@
 
     <repositories>
         <repository>
-            <id>craftminecraft-dev</id>
-            <url>http://repo.craftminecraft.net/content/groups/public/</url>
-        </repository>
-        <repository>
             <id>snapshot-repo</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </repository>
     </repositories>
 
     <dependencies>
-        <dependency>
-            <groupId>net.craftminecraft.bungee</groupId>
-            <artifactId>bungeeyaml</artifactId>
-            <version>1.2.4-SNAPSHOT</version>
-        </dependency>
         <dependency>
             <groupId>net.md-5</groupId>
             <artifactId>bungeecord-api</artifactId>

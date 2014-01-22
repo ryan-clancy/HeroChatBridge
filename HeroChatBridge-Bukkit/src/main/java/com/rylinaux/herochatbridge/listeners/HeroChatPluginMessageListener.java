@@ -32,9 +32,6 @@ public class HeroChatPluginMessageListener implements PluginMessageListener {
         ByteArrayDataInput in = ByteStreams.newDataInput(bytes);
 
         String channelName = in.readUTF();
-        String playerName = in.readUTF();
-        String message = in.readUTF();
-        String fromServer = in.readUTF();
 
         Channel channel = Herochat.getChannelManager().getChannel(channelName);
 
@@ -42,6 +39,10 @@ public class HeroChatPluginMessageListener implements PluginMessageListener {
             Bukkit.getServer().getLogger().log(Level.SEVERE, String.format("HeroChat channel %s does not exist - check your configuration.", channelName));
             return;
         }
+
+        String playerName = in.readUTF();
+        String message = in.readUTF();
+        String fromServer = in.readUTF();
 
         String nick = channel.getNick();
         String coloredName = getNameWithPrefix(playerName);
