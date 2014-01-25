@@ -1,13 +1,13 @@
 package com.rylinaux.herochatbridge.listeners;
 
+import com.rylinaux.herochatbridge.HeroChatBridgeBungee;
+
+import java.net.InetSocketAddress;
+
 import net.md_5.bungee.api.config.ServerInfo;
 import net.md_5.bungee.api.event.PluginMessageEvent;
 import net.md_5.bungee.api.plugin.Listener;
 import net.md_5.bungee.event.EventHandler;
-
-import com.rylinaux.herochatbridge.HeroChatBridgeBungee;
-
-import java.net.InetSocketAddress;
 
 public class PluginMessageListener implements Listener {
 
@@ -22,7 +22,7 @@ public class PluginMessageListener implements Listener {
         if (event.getTag().equalsIgnoreCase("HeroChatBridge")) {
             InetSocketAddress senderAddress = event.getSender().getAddress();
             for (ServerInfo server : plugin.getProxy().getServers().values()) {
-                if ((server.getPlayers().size() != 0) && (senderAddress != server.getAddress())) {
+                if ((server.getPlayers().size() != 0) && !(senderAddress.equals(server.getAddress()))) {
                     server.sendData("HeroChatBridge", event.getData());
                 }
             }
