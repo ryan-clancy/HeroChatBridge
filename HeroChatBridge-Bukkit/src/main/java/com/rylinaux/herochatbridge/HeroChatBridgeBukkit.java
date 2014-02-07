@@ -6,6 +6,8 @@ import com.rylinaux.herochatbridge.listeners.HeroChatPluginMessageListener;
 import java.util.List;
 import java.util.logging.Level;
 
+import lombok.Getter;
+
 import net.milkbowl.vault.chat.Chat;
 
 import org.bukkit.plugin.RegisteredServiceProvider;
@@ -13,12 +15,16 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class HeroChatBridgeBukkit extends JavaPlugin {
 
+    @Getter
     private static Chat chat = null;
 
-    private String serverKey = "";
+    @Getter
+    private static String serverKey = null;
 
+    @Getter
     private List<String> channels = null;
 
+    @Getter
     private List<String> blackList = null;
 
     @Override
@@ -53,20 +59,12 @@ public class HeroChatBridgeBukkit extends JavaPlugin {
         this.saveConfig();
     }
 
-    public static Chat getChat() {
-        return chat;
-    }
-
     public boolean isBlacklisted(String channel) {
         return blackList.contains(channel);
     }
 
     public boolean isValidChannel(String channel) {
         return channels.contains(channel);
-    }
-
-    public String getServerKey() {
-        return serverKey;
     }
 
 }
