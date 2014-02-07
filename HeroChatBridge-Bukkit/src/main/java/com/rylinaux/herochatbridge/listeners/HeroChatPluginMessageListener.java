@@ -35,7 +35,7 @@ public class HeroChatPluginMessageListener implements PluginMessageListener {
 
         Channel channel = Herochat.getChannelManager().getChannel(channelName);
 
-        if (channel == null) {
+        if (channel == null || !Herochat.getChannelManager().hasChannel(channelName)) {
             Bukkit.getServer().getLogger().log(Level.SEVERE, String.format("HeroChat channel %s does not exist - check your configuration.", channelName));
             return;
         }
