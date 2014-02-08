@@ -1,6 +1,6 @@
-package com.rylinaux.herochatbridge;
+package com.rylinaux.herochatbridge.bungee;
 
-import com.rylinaux.herochatbridge.listeners.PluginMessageListener;
+import com.rylinaux.herochatbridge.bungee.listeners.PluginMessageListener;
 
 import net.md_5.bungee.api.plugin.Plugin;
 

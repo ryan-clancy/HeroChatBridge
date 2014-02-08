@@ -1,6 +1,6 @@
-package com.rylinaux.herochatbridge.listeners;
+package com.rylinaux.herochatbridge.bungee.listeners;
 
-import com.rylinaux.herochatbridge.HeroChatBridgeBungee;
+import com.rylinaux.herochatbridge.bungee.HeroChatBridgeBungee;
 
 import java.net.InetSocketAddress;
 

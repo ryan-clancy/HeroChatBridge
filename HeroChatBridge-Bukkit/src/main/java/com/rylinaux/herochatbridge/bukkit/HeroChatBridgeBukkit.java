@@ -1,7 +1,7 @@
-package com.rylinaux.herochatbridge;
+package com.rylinaux.herochatbridge.bukkit;
 
-import com.rylinaux.herochatbridge.listeners.HeroChatListener;
-import com.rylinaux.herochatbridge.listeners.HeroChatPluginMessageListener;
+import com.rylinaux.herochatbridge.bukkit.listeners.HeroChatListener;
+import com.rylinaux.herochatbridge.bukkit.listeners.HeroChatPluginMessageListener;
 
 import java.util.List;
 import java.util.logging.Level;

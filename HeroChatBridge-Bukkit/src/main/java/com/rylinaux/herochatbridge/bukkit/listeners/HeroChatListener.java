@@ -1,4 +1,4 @@
-package com.rylinaux.herochatbridge.listeners;
+package com.rylinaux.herochatbridge.bukkit.listeners;
 
 import com.dthielke.herochat.ChannelChatEvent;
 import com.dthielke.herochat.Chatter;
@@ -7,7 +7,7 @@ import com.dthielke.herochat.Herochat;
 import com.google.common.io.ByteArrayDataOutput;
 import com.google.common.io.ByteStreams;
 
-import com.rylinaux.herochatbridge.HeroChatBridgeBukkit;
+import com.rylinaux.herochatbridge.bukkit.HeroChatBridgeBukkit;
 
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;

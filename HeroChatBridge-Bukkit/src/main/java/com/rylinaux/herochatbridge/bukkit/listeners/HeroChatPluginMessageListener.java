@@ -1,11 +1,12 @@
-package com.rylinaux.herochatbridge.listeners;
+package com.rylinaux.herochatbridge.bukkit.listeners;
 
 import com.dthielke.herochat.Channel;
 import com.dthielke.herochat.Herochat;
+
 import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteStreams;
 
-import com.rylinaux.herochatbridge.HeroChatBridgeBukkit;
+import com.rylinaux.herochatbridge.bukkit.HeroChatBridgeBukkit;
 
 import java.util.logging.Level;
 
