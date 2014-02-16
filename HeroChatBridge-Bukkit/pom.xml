@@ -14,6 +14,10 @@
 
     <artifactId>herochatbridge.bukkit</artifactId>
 
+    <build>
+        <finalName>HeroChatBridgeBukkit</finalName>
+    </build>
+
     <repositories>
         <repository>
             <id>bukkit-repo</id>
