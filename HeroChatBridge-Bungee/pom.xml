@@ -14,6 +14,10 @@
 
     <artifactId>herochatbridge.bungee</artifactId>
 
+    <build>
+        <finalName>HeroChatBridgeBungee</finalName>
+    </build>
+
     <dependencies>
         <dependency>
             <groupId>net.md-5</groupId>
