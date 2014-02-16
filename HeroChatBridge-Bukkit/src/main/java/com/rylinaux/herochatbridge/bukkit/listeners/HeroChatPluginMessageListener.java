@@ -7,6 +7,7 @@ import com.google.common.io.ByteArrayDataInput;
 import com.google.common.io.ByteStreams;
 
 import com.rylinaux.herochatbridge.bukkit.HeroChatBridgeBukkit;
+import com.rylinaux.herochatbridge.bukkit.utilities.MessageFormatter;
 
 import java.util.logging.Level;
 
@@ -41,7 +42,7 @@ public class HeroChatPluginMessageListener implements PluginMessageListener {
             return;
         }
 
-        if (plugin.isBlacklisted(channelName)) {
+        if (plugin.isBlacklisted(channelName) || !plugin.isValidChannel(channelName)) {
             return;
         }
 
@@ -49,12 +50,18 @@ public class HeroChatPluginMessageListener implements PluginMessageListener {
         String message = in.readUTF();
         String fromServer = in.readUTF();
 
+        channel.sendRawMessage(MessageFormatter.format(playerName, message, fromServer, "world", channel));
+
+        /*
+
         String nick = channel.getNick();
         String coloredName = getNameWithPrefix(playerName);
 
         ChatColor cColor = channel.getColor();
 
         channel.sendRawMessage(cColor + "[" + nick + ":" + fromServer + "] " + ChatColor.translateAlternateColorCodes('&', coloredName) + cColor + ": " + message);
+
+        */
 
     }
 
