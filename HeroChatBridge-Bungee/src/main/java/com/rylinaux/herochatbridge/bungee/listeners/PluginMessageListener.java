@@ -19,11 +19,11 @@ public class PluginMessageListener implements Listener {
 
     @EventHandler
     public void receivePluginMessage(PluginMessageEvent event) {
-        if (event.getTag().equalsIgnoreCase("HeroChatBridge")) {
+        if (event.getTag().equalsIgnoreCase(HeroChatBridgeBungee.CHANNEL)) {
             InetSocketAddress senderAddress = event.getSender().getAddress();
             for (ServerInfo server : plugin.getProxy().getServers().values()) {
                 if ((server.getPlayers().size() != 0) && !(senderAddress.equals(server.getAddress()))) {
-                    server.sendData("HeroChatBridge", event.getData());
+                    server.sendData(HeroChatBridgeBungee.CHANNEL, event.getData());
                 }
             }
         }
