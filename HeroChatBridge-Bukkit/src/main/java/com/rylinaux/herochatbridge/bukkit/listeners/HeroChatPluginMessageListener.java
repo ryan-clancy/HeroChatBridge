@@ -12,7 +12,6 @@ import com.rylinaux.herochatbridge.bukkit.utilities.MessageFormatter;
 import java.util.logging.Level;
 
 import org.bukkit.Bukkit;
-import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.messaging.PluginMessageListener;
 
@@ -48,9 +47,10 @@ public class HeroChatPluginMessageListener implements PluginMessageListener {
 
         String playerName = in.readUTF();
         String message = in.readUTF();
+        String world = in.readUTF();
         String fromServer = in.readUTF();
 
-        channel.sendRawMessage(MessageFormatter.format(playerName, message, fromServer, "world", channel));
+        channel.sendRawMessage(MessageFormatter.format(playerName, message, fromServer, world, channel));
 
         /*
 
