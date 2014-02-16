@@ -41,7 +41,7 @@ public class HeroChatListener implements Listener {
         out.writeUTF(channel);
         out.writeUTF(player);
         out.writeUTF(message);
-        out.writeUTF(HeroChatBridgeBukkit.getServerKey());
+        out.writeUTF(plugin.getServerKey());
         plugin.getServer().getOnlinePlayers()[0].sendPluginMessage(plugin, "HeroChatBridge", out.toByteArray());
     }
 

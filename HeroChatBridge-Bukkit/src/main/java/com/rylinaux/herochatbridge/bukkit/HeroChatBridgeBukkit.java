@@ -19,7 +19,7 @@ public class HeroChatBridgeBukkit extends JavaPlugin {
     private static Chat chat = null;
 
     @Getter
-    private static String serverKey = null;
+    private String serverKey = null;
 
     @Getter
     private List<String> channels = null;
