@@ -1,4 +1,4 @@
 name: HeroChatBridgeBungee
-main: com.rylinaux.herochatbridge.HeroChatBridgeBungee
+main: com.rylinaux.herochatbridge.bungee.HeroChatBridgeBungee
 version: 1.0.1
 author: rylinaux
