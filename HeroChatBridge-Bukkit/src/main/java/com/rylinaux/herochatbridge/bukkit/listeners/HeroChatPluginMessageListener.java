@@ -26,7 +26,7 @@ public class HeroChatPluginMessageListener implements PluginMessageListener {
     @Override
     public void onPluginMessageReceived(String header, Player player, byte[] bytes) {
 
-        if (!(header.equalsIgnoreCase("HeroChatBridge"))) {
+        if (!(header.equalsIgnoreCase(HeroChatBridgeBukkit.CHANNEL))) {
             return;
         }
 
@@ -51,17 +51,6 @@ public class HeroChatPluginMessageListener implements PluginMessageListener {
         String fromServer = in.readUTF();
 
         channel.sendRawMessage(MessageFormatter.format(playerName, message, fromServer, world, channel));
-
-        /*
-
-        String nick = channel.getNick();
-        String coloredName = getNameWithPrefix(playerName);
-
-        ChatColor cColor = channel.getColor();
-
-        channel.sendRawMessage(cColor + "[" + nick + ":" + fromServer + "] " + ChatColor.translateAlternateColorCodes('&', coloredName) + cColor + ": " + message);
-
-        */
 
     }
 

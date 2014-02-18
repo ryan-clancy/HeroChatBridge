@@ -24,8 +24,8 @@ public class HeroChatListener implements Listener {
     @EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
     public void onChannelChat(ChannelChatEvent event) {
         // Make sure the chat is allowed and it isn't a PM
-        if ((event.getResult() == Chatter.Result.ALLOWED)) {
-            if (!(event.getFormat().equalsIgnoreCase(Herochat.getChannelManager().getConversationFormat()))) {
+        if (event.getResult() == Chatter.Result.ALLOWED) {
+            if (!event.getFormat().equalsIgnoreCase(Herochat.getChannelManager().getConversationFormat())) {
                 String channel = event.getChannel().getName();
                 if (plugin.isValidChannel(channel)) {
                     String player = event.getSender().getName();
@@ -44,7 +44,7 @@ public class HeroChatListener implements Listener {
         out.writeUTF(message);
         out.writeUTF(world);
         out.writeUTF(plugin.getServerKey());
-        plugin.getServer().getOnlinePlayers()[0].sendPluginMessage(plugin, "HeroChatBridge", out.toByteArray());
+        plugin.getServer().getOnlinePlayers()[0].sendPluginMessage(plugin, HeroChatBridgeBukkit.CHANNEL, out.toByteArray());
     }
 
 }

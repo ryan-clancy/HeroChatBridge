@@ -15,6 +15,8 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class HeroChatBridgeBukkit extends JavaPlugin {
 
+    public static final String CHANNEL = "HeroChatBridge";
+
     @Getter
     private static Chat chat = null;
 
@@ -39,8 +41,9 @@ public class HeroChatBridgeBukkit extends JavaPlugin {
         initConfig();
 
         this.getServer().getPluginManager().registerEvents(new HeroChatListener(this), this);
-        this.getServer().getMessenger().registerIncomingPluginChannel(this, "HeroChatBridge", new HeroChatPluginMessageListener(this));
-        this.getServer().getMessenger().registerOutgoingPluginChannel(this, "HeroChatBridge");
+
+        this.getServer().getMessenger().registerIncomingPluginChannel(this, CHANNEL, new HeroChatPluginMessageListener(this));
+        this.getServer().getMessenger().registerOutgoingPluginChannel(this, CHANNEL);
 
     }
 
