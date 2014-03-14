@@ -1,5 +1,11 @@
+###
+# The key used to distinguish this server.
+###
 key: H
 
+###
+# List of channels to send to the other servers.
+###
 channels:
   - Admin
   - Architect
@@ -7,5 +13,8 @@ channels:
   - Staff
   - VIP
 
+###
+# List of channels that shouldn't be displayed from other servers.
+###
 blacklist:
   - Example
