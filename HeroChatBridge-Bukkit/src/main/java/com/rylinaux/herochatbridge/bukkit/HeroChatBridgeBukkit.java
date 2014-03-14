@@ -27,7 +27,7 @@ public class HeroChatBridgeBukkit extends JavaPlugin {
     private List<String> channels = null;
 
     @Getter
-    private List<String> blackList = null;
+    private List<String> ignored = null;
 
     @Override
     public void onEnable() {
@@ -58,12 +58,12 @@ public class HeroChatBridgeBukkit extends JavaPlugin {
         this.getConfig().options().copyDefaults(true);
         serverKey = this.getConfig().getString("key");
         channels = this.getConfig().getStringList("channels");
-        blackList = this.getConfig().getStringList("blacklist");
+        ignored = this.getConfig().getStringList("ignored");
         this.saveConfig();
     }
 
-    public boolean isBlacklisted(String channel) {
-        return blackList.contains(channel);
+    public boolean isIgnored(String channel) {
+        return ignored.contains(channel);
     }
 
     public boolean isValidChannel(String channel) {

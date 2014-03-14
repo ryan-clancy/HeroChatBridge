@@ -16,5 +16,5 @@ channels:
 ###
 # List of channels that shouldn't be displayed from other servers.
 ###
-blacklist:
+ignored:
   - Example
