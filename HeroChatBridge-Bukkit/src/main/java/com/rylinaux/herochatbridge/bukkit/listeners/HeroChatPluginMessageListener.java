@@ -34,14 +34,14 @@ public class HeroChatPluginMessageListener implements PluginMessageListener {
 
         String channelName = in.readUTF();
 
+        if (plugin.isBlacklisted(channelName)) {
+            return;
+        }
+
         Channel channel = Herochat.getChannelManager().getChannel(channelName);
 
         if (channel == null || !Herochat.getChannelManager().hasChannel(channelName)) {
             Bukkit.getServer().getLogger().log(Level.SEVERE, String.format("HeroChat channel %s does not exist - check your configuration.", channelName));
-            return;
-        }
-
-        if (plugin.isBlacklisted(channelName) || !plugin.isValidChannel(channelName)) {
             return;
         }
 
@@ -52,10 +52,6 @@ public class HeroChatPluginMessageListener implements PluginMessageListener {
 
         channel.sendRawMessage(MessageFormatter.format(playerName, message, fromServer, world, channel));
 
-    }
-
-    public String getNameWithPrefix(String playerName) {
-        return plugin.getChat().getPlayerPrefix(plugin.getServer().getWorlds().get(0), playerName) + playerName;
     }
 
 }
