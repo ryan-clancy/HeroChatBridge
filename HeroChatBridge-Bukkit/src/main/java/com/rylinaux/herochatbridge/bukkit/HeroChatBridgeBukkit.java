@@ -1,14 +1,12 @@
 package com.rylinaux.herochatbridge.bukkit;
 
+import net.milkbowl.vault.chat.Chat;
+
 import com.rylinaux.herochatbridge.bukkit.listeners.HeroChatListener;
 import com.rylinaux.herochatbridge.bukkit.listeners.HeroChatPluginMessageListener;
 
 import java.util.List;
 import java.util.logging.Level;
-
-import lombok.Getter;
-
-import net.milkbowl.vault.chat.Chat;
 
 import org.bukkit.plugin.RegisteredServiceProvider;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -17,16 +15,12 @@ public class HeroChatBridgeBukkit extends JavaPlugin {
 
     public static final String CHANNEL = "HeroChatBridge";
 
-    @Getter
     private static Chat chat = null;
 
-    @Getter
     private String serverKey = null;
 
-    @Getter
     private List<String> channels = null;
 
-    @Getter
     private List<String> ignored = null;
 
     @Override
@@ -68,6 +62,22 @@ public class HeroChatBridgeBukkit extends JavaPlugin {
 
     public boolean isValidChannel(String channel) {
         return channels.contains(channel);
+    }
+
+    public static Chat getChat() {
+        return chat;
+    }
+
+    public String getServerKey() {
+        return serverKey;
+    }
+
+    public List<String> getChannels() {
+        return channels;
+    }
+
+    public List<String> getIgnored() {
+        return ignored;
     }
 
 }
